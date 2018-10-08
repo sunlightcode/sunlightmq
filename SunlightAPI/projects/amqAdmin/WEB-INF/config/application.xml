@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application>
+	<modules>
+		<module name="adminLogin" output="adminLogin.jsp" />
+		<module name="password" output="password.jsp" />
+		<module name="index" output="index.jsp" />
+		<module name="ajax" output="ajax.jsp" />
+		<module name="top" output="top.jsp" />
+		<module name="bottom" output="bottom.jsp" />
+		<module name="left" output="left.jsp" />
+		<module name="right" output="right.jsp" />
+		<module name="recache" output="recache.jsp" />
+		<module name="middle" output="middle.jsp" />
+		<module name="router" output="router.jsp" />
+		<module name="systemRole" output="systemRole.jsp" />
+		<module name="systemUser" output="systemUser.jsp" />
+		<module name="mqServer" output="mqServer.jsp" />
+		<module name="queue" output="queue.jsp" />
+		<module name="msgCenter" output="msgCenter.jsp" />
+		<module name="msgProcessor" output="msgProcessor.jsp" />
+		<module name="method" output="method.jsp" />
+		<module name="client" output="client.jsp" />
+		<module name="service" output="service.jsp" />
+		<module name="exceptionLog" output="exceptionLog.jsp" />
+		<module name="queueState" output="queueState.jsp" />
+	</modules>
+	<queryDataLists>
+		<queryDataList name="client" conditionRelation="and"
+			pageNumber="20" isQueryWithNoCondition="true" columns="*">
+			<condition name="clientID" operator="=" expression="$q_clientID$" />
+			<condition name="appKey" operator="=" expression="$q_appKey$" />
+			<condition name="name" operator="like" expression="%$q_name$%" />
+			<condition name="validFlag" operator="=" expression="$q_validFlag$" />
+			<condition name="deleteFlag" operator="=" expression="$q_deleteFlag$" />
+		</queryDataList>
+
+		<queryDataList name="queue" conditionRelation="and"
+			pageNumber="20" isQueryWithNoCondition="true">
+			<condition name="name" operator="like" expression="%$q_name$%" />
+			<condition name="queueType" operator="like" expression="%$q_queueType$%" />
+			<condition name="info" operator="like" expression="%$q_info$%" />
+			<condition name="persistentFlag" operator="="
+				expression="$q_persistentFlag$" />
+			<condition name="deletedFlag" operator="=" expression="$q_deletedFlag$" />
+		</queryDataList>
+
+		<queryDataList name="queueState" conditionRelation="and"
+			pageNumber="20" isQueryWithNoCondition="true">
+			<condition name="queueName" operator="like" expression="%$q_queueName$%" />
+			<condition name="memoryLimit" operator="like" expression="%$q_memoryLimit$%" />
+			<condition name="queueSize" operator="like" expression="%$q_queueSize$%" />
+		</queryDataList>
+
+		<queryDataList name="msgCenter_V" conditionRelation="and"
+			pageNumber="20" isQueryWithNoCondition="true">
+			<condition name="deletedFlag" operator="=" expression="$q_deletedFlag$" />
+		</queryDataList>
+
+		<queryDataList name="msgProcessor_V" conditionRelation="and"
+			pageNumber="20" isQueryWithNoCondition="true">
+			<condition name="deletedFlag" operator="=" expression="$q_deletedFlag$" />
+			<condition name="queueName" operator="like" expression="%$q_queueName$%" />
+			<condition name="name" operator="like" expression="%$q_name$%" />
+			<condition name="callUrl" operator="like" expression="%$q_callUrl$%" />
+		</queryDataList>
+
+		<queryDataList name="c_method" conditionRelation="and"
+			pageNumber="20" isQueryWithNoCondition="true">
+			<condition name="c_methodID" operator="=" expression="$q_c_methodID$" />
+			<condition name="c_methodName" operator="like"
+				expression="%$q_c_methodName$%" />
+			<condition name="c_queueName" operator="like" expression="%$q_c_queueName$%" />
+		</queryDataList>
+
+		<queryDataList name="processExceptionLog"
+			conditionRelation="and" pageNumber="20" isQueryWithNoCondition="true">
+			<!-- <condition name="processExceptionLogID" operator="=" expression="$q_processExceptionLogID$" 
+				/> <condition name="msgCenterName" operator="like" expression="%$q_msgCenterName$%" 
+				/> -->
+			<condition name="msgProcessorName" operator="like"
+				expression="%$q_msgProcessorName$%" />
+			<condition name="messageJson" operator="like" expression="%$q_messageJson$%" />
+			<condition name="exceptionContent" operator="like"
+				expression="%$q_exceptionContent$%" />
+		</queryDataList>
+	</queryDataLists>
+</application>
+

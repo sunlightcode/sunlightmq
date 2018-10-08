@@ -1,0 +1,42 @@
+#downmsg_emessage {
+	POSITION: fixed;;
+	_position: absolute;
+	z-index: 100;
+	bottom: 0;;
+	right: 2px;
+	border: 2px solid #A6D9FF;
+	width: 180px;
+}
+
+#donwmsg_head {
+	float: left;
+	display: inline;
+	font-size: 13px;;
+	color: black;
+	font-weight: bold;
+	margin-left: 5px;;
+	margin-top: 4px;
+}
+
+#downmsgBar .close {
+	float: right;;
+	width: 25px;;
+	height: 25px;;
+	margin-top: 4px;;
+	display: block;;
+	margin-right: 5px;
+}
+
+#downmsgBar {
+	background-color: #F0F5F8;
+	height: 26px;
+}
+
+#donwmsg_content {
+	margin-top: 25px;
+	color: #AEDDFF;
+	margin-bottom: 4px;
+	padding-left: 4px;
+	height: 80px;
+	overflow: hidden;
+}

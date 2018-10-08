@@ -1,0 +1,52 @@
+<?xml version="1.0" ?>
+<project name="TiensActiveMQSender" default="war" basedir="..">
+	<property name="applicationRoot.dir" value="${basedir}/applicationRoot" />
+	<property name="src.dir" value="${basedir}/src" />
+	<property name="WEB-INF.dir" value="${applicationRoot.dir}/WEB-INF" />
+	<property name="classes.dir" value="${WEB-INF.dir}/classes" />
+	
+	<path id="compile.classpath">
+		<fileset dir="${WEB-INF.dir}/lib">
+			<include name="**/*.jar" />
+		</fileset>
+	</path>
+
+	<target name="clean">
+		<delete dir="${classes.dir}" />
+	</target>
+	
+	<target name="compile" depends="clean">
+		<mkdir dir="${classes.dir}" />
+		<javac srcdir="${src.dir}" destdir="${classes.dir}"
+			debug="yes" verbose="no" encoding="UTF-8" source="1.5" failonerror="true"
+			fork="true" memoryInitialSize="64m" memoryMaximumSize="256m" listfiles="true">
+			<include name="**/*.java" />
+			<classpath refid="compile.classpath" />
+		</javac>
+	</target>
+	
+	 <target name="war" depends="compile">
+	  <war warfile="${applicationRoot.dir}/activeMQSender.war" webxml="${WEB-INF.dir}/web.xml">
+	   <fileset dir="${applicationRoot.dir}" />
+	  </war>
+	 </target>
+
+	<!-- 
+	<target name="run" depends="compile">
+		<java classname="HelloAnt">
+			<classpath>
+				<pathelement path="${basedir}/applicationRoot/WEB-INF/classes" />
+			</classpath>
+		</java>
+	</target>
+	<target name="jar" depends="run"> 
+		<jar destfile="HelloAnt.jar" basedir="${basedir}/build/classes"> 
+		<manifest> <attribute name="Main-class" value="HelloAnt"/> </manifest> 
+		</jar> 
+	</target > 
+	<target name="api_doc" depends="jar"> <delete dir="${basedir}/doc"/> 
+		<mkdir dir="${basedir}/doc"/> <javadoc destdir="${basedir}/doc" sourcepath="${basedir}/src" 
+		package="exer.*" author="shoren" windowtitle="MyPro API"> <doctitle>MyPro 
+		Project</doctitle> <bottom>Document by Shoren 2013.</bottom> </javadoc> </target> 
+	-->
+</project> 
