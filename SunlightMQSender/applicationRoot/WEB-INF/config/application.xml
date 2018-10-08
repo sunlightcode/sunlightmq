@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application>
+	<modules>
+		<module name="adminLogin" output="adminLogin.jsp" />
+		<module name="password" output="password.jsp" />
+		<module name="index" output="index.jsp" />
+		<module name="ajax" output="ajax.jsp" />
+		<module name="top" output="top.jsp" />
+		<module name="bottom" output="bottom.jsp" />
+		<module name="left" output="left.jsp" />
+		<module name="right" output="right.jsp" />
+		<module name="recache" output="recache.jsp" />
+		<module name="middle" output="middle.jsp" />
+		<module name="router" output="router.jsp" />
+		<module name="systemRole" output="systemRole.jsp" />
+		<module name="systemUser" output="systemUser.jsp" />
+		<module name="queueServer" output="queueServer.jsp" />
+		<module name="queue" output="queue.jsp" />
+		<module name="msgCenter" output="msgCenter.jsp" />
+		<module name="msgProcessor" output="msgProcessor.jsp" />
+		<module name="method" output="method.jsp" />
+		<module name="client" output="client.jsp" />
+		<module name="check" output="check.jsp" />
+	</modules>
+	<queryDataLists>
+		<queryDataList name="client" conditionRelation="and" pageNumber="20" isQueryWithNoCondition="true" columns="clientID">
+			<condition name="clientID" operator="=" expression="$q_clientID$" />
+			<condition name="appKey" operator="=" expression="$q_appKey$" />
+			<condition name="name" operator="like" expression="%$q_name$%" />
+			<condition name="validFlag" operator="=" expression="$q_validFlag$" />
+			<condition name="deleteFlag" operator="=" expression="$q_deleteFlag$" />
+		</queryDataList>
+		
+		<queryDataList name="queue_V" conditionRelation="and" pageNumber="20" isQueryWithNoCondition="true">
+			<condition name="name" operator="like" expression="%$q_name$%" />
+			<condition name="persistentFlag" operator="=" expression="$q_persistentFlag$" />
+			<condition name="deletedFlag" operator="=" expression="$q_deletedFlag$" />
+		</queryDataList>
+		
+		<queryDataList name="msgCenter_V" conditionRelation="and" pageNumber="20" isQueryWithNoCondition="true">
+			<condition name="deletedFlag" operator="=" expression="$q_deletedFlag$" />
+		</queryDataList>
+		
+		<queryDataList name="msgProcessor_V" conditionRelation="and" pageNumber="20" isQueryWithNoCondition="true">
+			<condition name="deletedFlag" operator="=" expression="$q_deletedFlag$" />
+		</queryDataList>
+	</queryDataLists>
+</application>
+

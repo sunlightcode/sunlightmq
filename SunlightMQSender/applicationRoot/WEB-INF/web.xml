@@ -1,0 +1,88 @@
+<!DOCTYPE web-app PUBLIC  "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd">
+<web-app>
+	<servlet>
+		<servlet-name>ApplicationEntry</servlet-name>
+		<servlet-class>SunlightMQ.ApplicationEntry</servlet-class>
+		<load-on-startup>1</load-on-startup> 
+	</servlet>
+	<servlet>
+		<servlet-name>ModuleMapServlet</servlet-name>
+		<servlet-class>SunlightMQ.ModuleMapServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>DOWNLOADENTRY</servlet-name>
+		<servlet-class>SunlightMQ.DownloadEntry</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>VerifyImageGenerate</servlet-name>
+		<servlet-class>SunlightMQ.ImageGenerator</servlet-class>
+	</servlet>
+	
+	<!-- fckeditor -->  
+	<servlet>
+		<servlet-name>Connector</servlet-name>
+		<servlet-class>
+			net.fckeditor.connector.ConnectorServlet
+		</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Connector</servlet-name>
+		<url-pattern>/fckeditor/editor/filemanager/connectors/*</url-pattern>
+	</servlet-mapping>
+	<!-- fckeditor -->
+	
+	<servlet-mapping>
+		<servlet-name>DOWNLOADENTRY</servlet-name>
+		<url-pattern>/download</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>ApplicationEntry</servlet-name>
+		<url-pattern>/admin</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ApplicationEntry</servlet-name>
+		<url-pattern>/bussinessEntry</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ApplicationEntry</servlet-name>
+		<url-pattern>/ajax</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>VerifyImageGenerate</servlet-name>
+		<url-pattern>/randomNumberImage</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ModuleMapServlet</servlet-name>
+		<url-pattern>*.do</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+	<servlet-name>ApplicationEntry</servlet-name>
+	<url-pattern>/router/*</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ApplicationEntry</servlet-name>
+		<url-pattern>/queue/*</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>ModuleMapServlet</servlet-name>
+		<url-pattern>/check/*</url-pattern>
+	</servlet-mapping>
+	
+	<welcome-file-list>
+		<welcome-file>admin</welcome-file>
+	</welcome-file-list>
+	
+	<error-page> 
+		<error-code>404</error-code>
+		<location>/jsp/404error.jsp</location>
+	</error-page>
+	<!-- 
+	<error-page> 
+		<error-code>500</error-code>
+		<location>/jsp/500error.jsp</location>
+	</error-page>
+	 -->
+</web-app>

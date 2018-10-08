@@ -1,0 +1,48 @@
+applicationName = SunlightMQ
+isDebugModel = true
+
+#database config
+database.type = mysql
+database.driverName = com.mysql.jdbc.Driver
+database.url = jdbc:mysql://localhost:3316/amqmanager?useUnicode=true&characterEncoding=utf-8
+database.userName = root
+database.password = 123456
+database.maxActive = 100
+database.maxIdle = 1
+database.maxWait = 10000
+
+#mail server config
+mailServer.smtpHost = 
+mailServer.userName = 
+mailServer.password =
+
+msgCenter.name = AWSMsgCenter_1
+mqServer.name = AWSServer-g1-test
+MSG_IDENTITY_PRE =10.1.176.35
+nodeConfig = /home/amq/projects/node.config
+
+#flowController
+flowController.startJmxActiveMQ = false
+flowController.timeInterval = 60000
+flowController.jmxServiceURL = service:jmx:rmi:///jndi/rmi://localhost:1099/jmxrmi
+flowController.objectName = org.apache.activemq:brokerName=localhost,type=Broker
+flowController.needSenderControlQueues = noqueues
+#hellomq2,tienstest1,tienstest2,wjjtest1
+flowController.queueSizeLevel1 = 10000
+flowController.queueSizeLevel2 = 30000
+flowController.queueSizeLevel3 = 50000
+flowController.needSenderControlErrors = noqueues
+flowController.errorValue = 00501,00502,00503,00504,00505,00506,00507
+flowController.errorSizeLevel1 = 10000
+flowController.errorSizeLevel2 = 30000
+flowController.errorSizeLevel3 = 50000
+
+TOPIC_REPLYMSG_TIMEOUT = 20000
+
+NEED_TIMETOLIVE = true
+
+TIMETOLIVESIZE = 86400000
+
+MSG_GZIP = false
+
+catchExcption.needDoInsert = false
