@@ -1,0 +1,46 @@
+applicationName = tiens
+isDebugModel = true
+
+database.type = mysql
+database.driverName = com.mysql.jdbc.Driver
+database.url = jdbc:mysql://localhost:3316/amqmanager?useUnicode=true&characterEncoding=utf-8
+database.userName = root
+database.password = 123456
+database.maxActive = 10
+database.maxIdle = 1
+database.maxWait = 10000
+
+msgCenter.name = AWSMsgCenter_1
+mqServer.name = AWSServer-g1-test
+MSG_IDENTITY_PRE = 10.1.176.35
+nodeConfig =/home/amq/projects/node.config
+
+router_url=http\://172.16.3.100\:8080/TiensMQForwarder/rest/forwardmessage
+
+flowController.startJmxActiveMQ = false
+flowController.timeInterval = 60000
+flowController.jmxServiceURL = service:jmx:rmi:///jndi/rmi://localhost:1099/jmxrmi
+flowController.objectName = org.apache.activemq:brokerName=localhost,type=Broker
+flowController.needReceiverControlQueues = noqueues
+flowController.errorValue = 00501,00502,00503,00504,00505,00506,00507
+flowController.errorSizeLevel1 = 1
+flowController.errorSizeLevel2 = 3
+flowController.errorSizeLevel3 = 5
+
+TIME_OUT_INVOKER = 30000
+
+CLIENT_ACKNOWLEDGE = false
+
+MSG_GZIP = false
+
+catchExcption.needDoInsert = false
+
+jmsConnectionPool.maxConnections = 500
+
+threadPoolExecutor.corePoolSize = 500
+threadPoolExecutor.maximumPoolSize = 500
+threadPoolExecutor.keepAliveTime = 20
+threadPoolExecutor.linkedBlockingQueue.capacity = 0
+threadPoolExecutor.receiverNumber = 2
+
+checkStatusMessageListener.needResendMessage = false

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application>
+	<modules>
+		<module name="index" output="index.jsp" />
+		<module name="monitor" output="monitor.jsp" />
+		<module name="user" output="user.jsp" />
+		<module name="login" output="login.jsp" />
+		<module name="cart" output="cart.jsp" />
+		<module name="product" output="product.jsp" />
+		<module name="ajax" output="ajax.jsp" />
+		<module name="order" output="order.jsp" />
+		<module name="transaction" output="transaction.jsp" />
+		<module name="counter" output="counter.jsp" />
+	</modules>
+	<queryDataLists>
+	</queryDataLists>
+</application>
